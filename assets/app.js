@@ -98,7 +98,7 @@ function renderOverview() {
   main.innerHTML = `
     <div class="page-head">
       <div>
-        <p class="page-head__eyebrow">Exercício ${YEAR}</p>
+        <p class="page-head__eyebrow">Finanças ${YEAR}</p>
         <h1>Visão geral</h1>
         <p>Panorama consolidado dos doze meses. Selecione um mês na lateral para lançar ou revisar detalhes.</p>
       </div>

@@ -1,113 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Livro-Razão · Painel Financeiro 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle Financeiro</title>
+  <link rel="icon" type="img/png" href="img/icon_navegador.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
 
-<div class="app">
+  <div class="app">
 
-  <!-- SIDEBAR -->
-  <aside class="ledger">
-    <div class="ledger__brand">
-      <span class="ledger__mark">LR</span>
-      <div class="ledger__brandtext">
-        <strong>Livro-Razão</strong>
-        <span>Exercício 2026</span>
-      </div>
-    </div>
-
-    <nav class="ledger__nav" id="nav-overview">
-      <button class="ledger__tab ledger__tab--overview" data-view="overview">
-        <span class="ledger__tabicon">◆</span>
-        <span>Visão geral</span>
-      </button>
-    </nav>
-
-    <div class="ledger__months" id="nav-months"></div>
-
-    <div class="ledger__footer">
-      <button class="ledger__export" id="btn-export" title="Exportar backup dos dados (.json)">⇩ Exportar dados</button>
-      <label class="ledger__export" id="btn-import-label" title="Importar backup dos dados (.json)">
-        ⇧ Importar dados
-        <input type="file" id="btn-import" accept="application/json" hidden>
-      </label>
-    </div>
-  </aside>
-
-  <!-- MAIN -->
-  <main class="main" id="main">
-    <!-- conteúdo renderizado via JS -->
-  </main>
-
-</div>
-
-<!-- MODAL: novo lançamento -->
-<div class="modal" id="entry-modal" aria-hidden="true">
-  <div class="modal__backdrop" id="modal-backdrop"></div>
-  <form class="modal__card" id="entry-form" autocomplete="off">
-    <div class="modal__head">
-      <h3 id="modal-title">Novo lançamento</h3>
-      <button type="button" class="modal__close" id="modal-close" aria-label="Fechar">✕</button>
-    </div>
-
-    <input type="hidden" id="entry-id">
-
-    <div class="field-row">
-      <div class="field">
-        <label>Tipo</label>
-        <div class="segmented" id="type-segmented">
-          <button type="button" class="segmented__opt" data-type="entrada">Entrada</button>
-          <button type="button" class="segmented__opt" data-type="saida">Saída</button>
-          <button type="button" class="segmented__opt" data-type="investimento">Investimento</button>
+    <!-- SIDEBAR -->
+    <aside class="ledger">
+      <div class="ledger__brand">
+        <span class="ledger__mark">CF</span>
+        <div class="ledger__brandtext">
+          <strong>Controle Financeiro</strong>
+          <span>Financeiro 2026</span>
         </div>
       </div>
-    </div>
 
-    <div class="field-row two">
-      <div class="field">
-        <label for="entry-date">Data</label>
-        <input type="date" id="entry-date" required>
+      <nav class="ledger__nav" id="nav-overview">
+        <button class="ledger__tab ledger__tab--overview" data-view="overview">
+          <span class="ledger__tabicon">◆</span>
+          <span>Visão geral</span>
+        </button>
+      </nav>
+
+      <div class="ledger__months" id="nav-months"></div>
+
+      <div class="ledger__footer">
+        <button class="ledger__export" id="btn-export" title="Exportar backup dos dados (.json)">⇩ Exportar
+          dados</button>
+        <label class="ledger__export" id="btn-import-label" title="Importar backup dos dados (.json)">
+          ⇧ Importar dados
+          <input type="file" id="btn-import" accept="application/json" hidden>
+        </label>
       </div>
-      <div class="field">
-        <label for="entry-value">Valor (R$)</label>
-        <input type="number" id="entry-value" step="0.01" min="0" placeholder="0,00" required>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main" id="main">
+      <!-- conteúdo renderizado via JS -->
+    </main>
+
+  </div>
+
+  <!-- MODAL: novo lançamento -->
+  <div class="modal" id="entry-modal" aria-hidden="true">
+    <div class="modal__backdrop" id="modal-backdrop"></div>
+    <form class="modal__card" id="entry-form" autocomplete="off">
+      <div class="modal__head">
+        <h3 id="modal-title">Novo lançamento</h3>
+        <button type="button" class="modal__close" id="modal-close" aria-label="Fechar">✕</button>
       </div>
-    </div>
 
-    <div class="field-row">
-      <div class="field">
-        <label for="entry-desc">Descrição</label>
-        <input type="text" id="entry-desc" placeholder="Ex: Salário, Supermercado, Tesouro Selic..." required>
+      <input type="hidden" id="entry-id">
+
+      <div class="field-row">
+        <div class="field">
+          <label>Tipo</label>
+          <div class="segmented" id="type-segmented">
+            <button type="button" class="segmented__opt" data-type="entrada">Entrada</button>
+            <button type="button" class="segmented__opt" data-type="saida">Saída</button>
+            <button type="button" class="segmented__opt" data-type="investimento">Investimento</button>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="field-row">
-      <div class="field">
-        <label for="entry-cat">Categoria <span id="entry-cat-hint" class="field__hint"></span></label>
-        <input type="text" list="cat-list" id="entry-cat" placeholder="Ex: Moradia, Renda fixa, Lazer..." required>
-        <datalist id="cat-list"></datalist>
+      <div class="field-row two">
+        <div class="field">
+          <label for="entry-date">Data</label>
+          <input type="date" id="entry-date" required>
+        </div>
+        <div class="field">
+          <label for="entry-value">Valor (R$)</label>
+          <input type="number" id="entry-value" step="0.01" min="0" placeholder="0,00" required>
+        </div>
       </div>
-    </div>
 
-    <div class="modal__actions">
-      <button type="button" class="btn btn--ghost" id="entry-delete" hidden>Excluir</button>
-      <div class="modal__actions-right">
-        <button type="button" class="btn btn--ghost" id="modal-cancel">Cancelar</button>
-        <button type="submit" class="btn btn--primary">Salvar lançamento</button>
+      <div class="field-row">
+        <div class="field">
+          <label for="entry-desc">Descrição</label>
+          <input type="text" id="entry-desc" placeholder="Ex: Salário, Supermercado, Tesouro Selic..." required>
+        </div>
       </div>
-    </div>
-  </form>
-</div>
 
-<div class="toast" id="toast"></div>
+      <div class="field-row">
+        <div class="field">
+          <label for="entry-cat">Categoria <span id="entry-cat-hint" class="field__hint"></span></label>
+          <input type="text" list="cat-list" id="entry-cat" placeholder="Ex: Moradia, Renda fixa, Lazer..." required>
+          <datalist id="cat-list"></datalist>
+        </div>
+      </div>
 
-<script src="assets/vendor/chart.umd.min.js"></script>
-<script src="assets/app.js"></script>
+      <div class="modal__actions">
+        <button type="button" class="btn btn--ghost" id="entry-delete" hidden>Excluir</button>
+        <div class="modal__actions-right">
+          <button type="button" class="btn btn--ghost" id="modal-cancel">Cancelar</button>
+          <button type="submit" class="btn btn--primary">Salvar lançamento</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="assets/vendor/chart.umd.min.js"></script>
+  <script src="assets/app.js"></script>
 </body>
+
 </html>
