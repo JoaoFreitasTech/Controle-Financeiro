@@ -28,9 +28,9 @@
   --azure: #5b9bd8;
   --azure-soft: rgba(91, 155, 216, 0.14);
 
-  --font-display: 'Newsreader', Georgia, serif;
-  --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
-  --font-mono: 'IBM Plex Mono', 'SF Mono', monospace;
+  --font-display: 'Bebas Neue', Georgia, serif;
+  --font-body: 'Saira', -apple-system, sans-serif;
+  --font-mono: 'Saira', 'SF Mono', monospace;
 
   --radius-sm: 8px;
   --radius-md: 14px;
