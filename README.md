@@ -1,4 +1,4 @@
-# Livro-Razão · Painel Financeiro 2026
+# Painel de Controle Financeiro - 2026
 
 Dashboard pessoal de finanças, com os 12 meses de 2026, gráficos, tabela de lançamentos e formulário de entrada de dados. 100% front-end (HTML, CSS e JavaScript puro) — não precisa de servidor, banco de dados ou instalação de pacotes.
 
